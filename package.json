@@ -10,6 +10,15 @@
     "start:user": "nest start user --watch",
     "start:api-gateway": "nest start api-gateway --watch",
     "start:all": "concurrently \"npm run start:auth\" \"npm run start:user\" \"npm run start:api-gateway\"",
+   
+  "build:auth": "nest build auth",
+  "build:user": "nest build user",
+  "build:api-gateway": "nest build api-gateway",
+
+  "start:auth:prod": "node dist/apps/auth/main.js",
+  "start:user:prod": "node dist/apps/user/main.js",
+  "start:api-gateway:prod": "node dist/apps/api-gateway/main.js",
+
     "build": "nest build",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
