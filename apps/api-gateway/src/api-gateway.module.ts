@@ -4,6 +4,8 @@ import { AuthController } from './auth.controller';
 import { UserController } from './user.controller';
 import * as dotenv from 'dotenv';
 import { AuthGuard } from 'libs/common/guard/auth.guard';
+import { ApiGatewayController } from './api-gateway.controller';
+import { ApiGatewayService } from './api-gateway.service';
 
 dotenv.config();
 
@@ -28,7 +30,7 @@ dotenv.config();
       },
     ]),
   ],
-  controllers: [AuthController, UserController],
-  providers: [AuthGuard],
+  controllers: [ApiGatewayController, AuthController, UserController],
+  providers: [ApiGatewayService, AuthGuard],
 })
 export class ApiGatewayModule {}
