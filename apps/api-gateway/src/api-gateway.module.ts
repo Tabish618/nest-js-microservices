@@ -16,7 +16,7 @@ dotenv.config();
         name: 'AUTH_SERVICE',
         transport: Transport.TCP,
         options: {
-        host: process.env.HOST || '0.0.0.0',
+        host: process.env.AUTH_HOST || '0.0.0.0',
         port: parseInt(process.env.AUTH_PORT || '3001'),
         }
       },
@@ -24,7 +24,7 @@ dotenv.config();
         name: 'USER_SERVICE',
         transport: Transport.TCP,
         options: {
-          host: process.env.HOST || '0.0.0.0',
+          host: process.env.USER_HOST || '0.0.0.0',
           port: parseInt(process.env.USER_PORT || '3002'),
         },
       },
