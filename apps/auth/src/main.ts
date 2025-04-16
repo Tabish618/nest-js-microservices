@@ -7,6 +7,13 @@ dotenv.config({ path: './apps/auth/.env' });
 
 async function bootstrap() {
 
+  const httpApp = await NestFactory.create(AuthModule);
+  
+  // Start the HTTP server (for external API access)
+  await httpApp.listen(parseInt(process.env.AUTH_PORT || '3001'), () => {
+    console.log('HTTP server running on http://localhost:3000');
+  });
+
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(AuthModule, {
     transport: Transport.TCP,
     options: {

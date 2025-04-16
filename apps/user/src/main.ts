@@ -6,6 +6,14 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 async function bootstrap() {
+
+  const httpApp = await NestFactory.create(UserModule);
+    
+    // Start the HTTP server (for external API access)
+    await httpApp.listen(parseInt(process.env.USER_PORT || '3002'), () => {
+      console.log('HTTP server running on http://localhost:3000');
+    });
+  
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(UserModule, {
       transport: Transport.TCP,
       options: {
