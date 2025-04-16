@@ -1,7 +1,6 @@
 // api-gateway/src/main.ts
 import { NestFactory } from '@nestjs/core';
 import { ApiGatewayModule } from './api-gateway.module';
-import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import * as dotenv from 'dotenv';
 import { RpcToHttpExceptionFilter } from 'libs/common/filters/rpchttp-exception.filter';
 import { ValidationPipe } from '@nestjs/common';

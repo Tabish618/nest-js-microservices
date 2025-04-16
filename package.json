@@ -15,9 +15,9 @@
   "build:user": "nest build user",
   "build:api-gateway": "nest build api-gateway",
 
-  "start:auth:prod": "node dist/apps/auth/main.js",
-  "start:user:prod": "node dist/apps/user/main.js",
-  "start:api-gateway:prod": "node dist/apps/api-gateway/main.js",
+  "start:auth:prod": "node dist/apps/auth/src/main.js",
+  "start:user:prod": "node dist/apps/user/src/main.js",
+  "start:api-gateway:prod": "node dist/apps/api-gateway/src/main.js",
 
     "build": "nest build",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
