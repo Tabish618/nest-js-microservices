@@ -10,8 +10,8 @@ async function bootstrap() {
   const httpApp = await NestFactory.create(UserModule);
     
     // Start the HTTP server (for external API access)
-    await httpApp.listen(parseInt(process.env.USER_PORT || '3002'), () => {
-      console.log('HTTP server running on http://localhost:3000');
+    await httpApp.listen(parseInt('4002'), () => {
+      console.log('HTTP server running on http://localhost:4002');
     });
   
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(UserModule, {
