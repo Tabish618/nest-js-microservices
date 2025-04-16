@@ -14,7 +14,7 @@ import { JwtModule } from '@nestjs/jwt';
         name: 'USER_SERVICE',
         transport: Transport.TCP,
         options: {
-          host: process.env.HOST || 'localhost',
+          host: process.env.HOST || '0.0.0.0',
           port: parseInt(process.env.USER_PORT || '3002'),
         },
       },
